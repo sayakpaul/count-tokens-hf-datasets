@@ -19,7 +19,7 @@ Apache Beam reads data on a shard-by-shard basis and is therefore able to induce
  <br>
  <div align="center">
  <img src=https://i.ibb.co/qnVS95V/image.png width=200>
- <div>
+ </div>
 
 ## Running the code
 
