@@ -45,7 +45,6 @@ def parse_args():
         help="Size of the desired vocabulary.",
     )
     parser.add_argument(
-        "-l",
         "--limit",
         default=None,
         type=int,
@@ -57,7 +56,7 @@ def parse_args():
     )
 
     args = parser.parse_args()
-    return vars(args)
+    return args
 
 
 def get_unigram_tokenizer() -> Tokenizer:
