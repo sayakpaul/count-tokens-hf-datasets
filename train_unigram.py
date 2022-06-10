@@ -54,6 +54,12 @@ def parse_args():
         "--export_to_hub",
         action="store_true",
     )
+    parser.add_argument(
+        "--hf_username",
+        default="sayakpaul",
+        type=str,
+        help="If `export_to_hub` is specified then hf_username must also be provided accordingly.",
+    )
 
     args = parser.parse_args()
     return args
@@ -111,7 +117,9 @@ def main(args):
     if args.export_to_hub:
         logging.info("Exporting the trained tokenzier to Hub.")
         new_tokenizer = AlbertTokenizerFast(tokenizer_object=tokenizer)
-        new_tokenizer.push_to_hub("sayakpaul/unigram-tokenizer-wikitext")
+        new_tokenizer.push_to_hub(
+            f"{args.hf_username}/unigram-tokenizer-wikitext"
+        )
 
 
 if __name__ == "__main__":
