@@ -28,7 +28,6 @@ def parse_args():
         help="If not provided stores the jsonl shards locally. Useful for local debugging.",
     )
     parser.add_argument(
-        "-r",
         "--runner",
         type=str,
         choices=["DirectRunner", "DataflowRunner"],
@@ -68,7 +67,7 @@ def main(args):
         "machine_type": args.machine_type,
         "num_workers": "1",
         "max_num_workers": args.max_num_workers,
-        "setup_file": "setup.py",
+        "setup_file": "./setup.py",
         "project": GCP_PROJECT,
         "region": "us-central1",
         "gcs_location": f"gs://{args.gcs_bucket}",
