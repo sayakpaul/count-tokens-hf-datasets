@@ -74,14 +74,15 @@ def main(args):
     if not os.path.exists(args.local_dir):
         os.makedirs(args.local_dir)
 
-    wikitext = datasets.load_dataset(
-        "wikitext", "wikitext-103-raw-v1", split="train"
-    )
-
-    if args.limit is not None:
-        wikitext = wikitext[: args.limit]
-        wikitext = Dataset.from_dict(wikitext)
+    if args.limit is None:
+        wikitext = datasets.load_dataset(
+            "wikitext", "wikitext-103-raw-v1", split="train"
+        )
+    else:
         logging.info(f"Limiting the dataset to {args.limit} entries.")
+        wikitext = datasets.load_dataset(
+            "wikitext", "wikitext-103-raw-v1", split=f"train[:{args.limit}]"
+        )
 
     for index in tqdm(range(args.num_shards)):
         size = len(wikitext) // args.num_shards
