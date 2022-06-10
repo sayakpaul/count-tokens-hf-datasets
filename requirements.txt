@@ -1,4 +1,4 @@
-apache-beam[gcp]==2.33.0
+apache-beam[gcp]==2.34.0
 torch==1.11.0
 tokenizers==0.11.6
 transformers==4.17.0
