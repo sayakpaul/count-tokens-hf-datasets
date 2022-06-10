@@ -95,13 +95,13 @@ def main(args):
             p
             | "Read text shards"
             >> beam.io.ReadFromText(
-                file_pattern=f"gs://{args.gcs_bucket}/tmp/wikitext-data-2-of-99.jsonl"
+                file_pattern=f"gs://{args.gcs_bucket}/tmp/wikitext-data-*-of-*.jsonl"
             )
             | "Load as JSON" >> beam.Map(json.loads)
+            | "Get the text-key entries" >> beam.Map(lambda x: x["text"])
             | "Intelligently Batch examples"
             >> beam.BatchElements(min_batch_size=100, max_batch_size=1000)
-            | "Tokenize text shards"
-            >> beam.ParDo(lambda x: tokenizer(x["text"]))
+            | "Tokenize text shards" >> beam.FlatMap(lambda x: tokenizer(x))
             | "Count the number of tokens" >> beam.combiners.Count.Globally()
             | "Training sample count"
             >> beam.Map(lambda x: json.dumps({"training_tokens_count": x}))
