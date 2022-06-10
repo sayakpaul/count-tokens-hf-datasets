@@ -36,9 +36,9 @@ def parse_args():
     parser.add_argument(
         "-w",
         "--max-num-workers",
-        default="500",
+        default="100",
         type=str,
-        help="Number of maximum workers for Dataflow",
+        help="Number of maximum workers for Dataflow.",
     )
     parser.add_argument(
         "-m",
