@@ -67,7 +67,7 @@ Here's component-by-component breakdown of the costs:
 
 ## References
 
-[1] Scaling Laws for Neural Language Models: https://arxiv.org/abs/2001.08361
+[1] Scaling Laws for Neural Language Models (OpenAI): https://arxiv.org/abs/2001.08361
 
-[2] Training Compute-Optimal Large Language Models: https://arxiv.org/abs/2203.15556
+[2] Training Compute-Optimal Large Language Models (DeepMind): https://arxiv.org/abs/2203.15556
 
