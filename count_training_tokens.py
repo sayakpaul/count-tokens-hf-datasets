@@ -1,3 +1,8 @@
+"""
+Usage:
+    python count_training_tokens.py --runner DataflowRunner
+"""
+
 import argparse
 import json
 import logging

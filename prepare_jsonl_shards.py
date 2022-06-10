@@ -4,6 +4,8 @@ Test run locally:
 
 To run with the full dataset:
     python prepare_jsonl_shards.py --gcs_bucket hf-datasets-wikitext --log_interval 20
+
+Thanks to Quentin Lhoest of 🤗 for providing the meat of this script.
 """
 
 import argparse
