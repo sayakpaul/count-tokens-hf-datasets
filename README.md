@@ -62,7 +62,7 @@ Here's component-by-component breakdown of the costs:
 
 ## Acknowledgements
 
-* Thanks to the ML GDE Program (ML Ecosystem Team) at Google that provided GCP credits to support the project.
+* Thanks to the [ML GDE Program (ML Ecosystem Team)](https://developers.google.com/programs/experts/) at Google that provided GCP credits to support the project.
 * Thanks to [Quentin Lhoest](https://github.com/lhoestq) from Hugging face (maintainer of 🤗 `datasets`) for insightful discussions and for provding the shard generation snippet.
 
 ## References
