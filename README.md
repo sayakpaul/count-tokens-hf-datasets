@@ -12,7 +12,7 @@ This project leverages to [`datasets`](https://huggingface.co/datasets) library 
 * Load the [`wikitext`](https://huggingface.co/datasets/wikitext) dataset using `datasets`. It has over a million number of training samples. So, it's a good candidate for demonstration purposes. 
 * Generate `.jsonl` shards of the dataset and have them uploaded to a [Google Cloud Storage (GCS) bucket](https://cloud.google.com/storage). The shard generation step is needed because
 Apache Beam reads data on a shard-by-shard basis and is therefore able to induce parallel processing across many workers.
-* Train a tokenizer using the 🤗 [`tokenizers`](https://github.com/huggingface/tokenizers) library with the `wikitext` dataset from 🤗 `datasets`.  
+* Train a tokenizer using the 🤗 [`tokenizers`](https://github.com/huggingface/tokenizers) library with the `wikitext` dataset from 🤗 `datasets`. The tokenizer I trained is available here: https://huggingface.co/sayakpaul/unigram-tokenizer-wikitext.
 * Execute the Apache Beam pipeline on Dataflow for generating the number of training tokens. The steps of the Beam pipeline
   are as follows:
 
