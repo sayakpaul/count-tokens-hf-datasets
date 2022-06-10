@@ -26,7 +26,8 @@ def parse_args():
         "--gcs_bucket",
         default=None,  #  "hf-datasets-wikitext"
         type=str,
-        help="If not provided stores the jsonl shards locally. Useful for local debugging.",
+        help="If not provided stores the jsonl shards locally. Useful for local debugging."
+        " For running on Dataflow GCS bucket is mandatory.",
     )
     parser.add_argument(
         "--local_dir",

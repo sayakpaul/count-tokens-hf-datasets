@@ -17,9 +17,9 @@ def parse_args():
     )
     parser.add_argument(
         "--gcs_bucket",
-        default=None,  #  "hf-datasets-wikitext"
+        default="hf-datasets-wikitext",  # For running on Dataflow, GCS bucket is mandatory.
         type=str,
-        help="If not provided stores the jsonl shards locally. Useful for local debugging.",
+        help="GCS bucket from which the jsonl shards are to be read.",
     )
     parser.add_argument(
         "--tokenizer_path",
