@@ -7,7 +7,7 @@ of tokens can be non-trivial for large-scale datasets. Hence this project.
 
 ## Steps
 
-This project leverages to [`datasets`](https://huggingface.co/datasets) library from Hugging Face 🤗 to load a text dataset. It then prepares shards of the dataset. Once the shards have been prepared, it then executes an Apache Beam pipeline on Cloud Dataflow to generate the number of training tokens. We use Apache Beam to use distributed processing which significantly speeds up the process. We use Cloud Dataflow because it provides seamless autoscaling capabilities. Below are the steps:
+This project leverages the [`datasets`](https://huggingface.co/datasets) library from Hugging Face 🤗 to load a text dataset. It then prepares shards of the dataset. Once the shards have been prepared, it then executes an Apache Beam pipeline on Cloud Dataflow to generate the number of training tokens. We use Apache Beam to use distributed processing which significantly speeds up the process. We use Cloud Dataflow because it provides seamless autoscaling capabilities. Below are the steps:
 
 * Load the [`wikitext`](https://huggingface.co/datasets/wikitext) dataset using `datasets`. It has over a million number of training samples. So, it's a good candidate for demonstration purposes. 
 * Generate `.jsonl` shards of the dataset and have them uploaded to a [Google Cloud Storage (GCS) bucket](https://cloud.google.com/storage). The shard generation step is needed because
